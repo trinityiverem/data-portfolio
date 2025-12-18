@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+from pathlib import Path
+
 
 # ---------- COLOUR PALETTE ----------
 LIGHT_BLUE = "#8fd7d7"
@@ -18,7 +20,18 @@ MED_ORANGE = "#ffb255"
 # ---------- DATA LOADING ----------
 @st.cache_data
 def load_data():
-    df = pd.read_csv("world_happiness_report.csv")
+    # Work out where this file lives
+    current_dir = Path(__file__).resolve().parent
+
+    # First, assume the CSV is in the same folder as this page file
+    csv_path = current_dir / "world_happiness_report.csv"
+
+    # If not there, fall back to the repo root (one level up)
+    if not csv_path.exists():
+        csv_path = current_dir.parent / "world_happiness_report.csv"
+
+    # Now read from the resolved path
+    df = pd.read_csv(csv_path)
 
     # Drop index column if present
     if "Unnamed: 0" in df.columns:
@@ -57,7 +70,6 @@ def load_data():
     df = df[df["Country"].notna()]
 
     return df
-
 
 df = load_data()
 
