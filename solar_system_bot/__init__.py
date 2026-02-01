@@ -1,0 +1,1 @@
+from solar_system_bot.solar_core import get_bot_reply

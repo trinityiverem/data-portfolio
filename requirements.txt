@@ -1,4 +1,10 @@
 streamlit
 pandas
+numpy
 matplotlib
 plotly
+python-aiml
+scikit-learn
+nltk
+fastapi
+uvicorn

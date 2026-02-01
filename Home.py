@@ -6,7 +6,7 @@ st.set_page_config(
     layout="centered",
 )
 
-st.title("Trinity – Data Portfolio")
+st.title("Trinity's Data Portfolio")
 st.write(
     """
 Welcome to my interactive data portfolio.  
@@ -37,14 +37,19 @@ across countries and regions.
     )
 
 with col2:
-    st.markdown("### 📈 Coming soon")
+    st.markdown("### 🪐 Solar System Learning Hub")
     st.write(
         """
-This space is reserved for my next project, focused on real-world data
-and practical decision-making.
+An interactive learning app that combines a rule-based chatbot, a planet
+explorer with animations, and a quiz to make the Solar System easier to
+understand.
 """
     )
-    st.button("Project locked", disabled=True)
+    st.page_link(
+        "pages/2_Solar_System_Learning_Hub.py",
+        label="Open project",
+        icon="➡️",
+    )
 
 st.divider()
 
