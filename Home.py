@@ -10,8 +10,8 @@ st.title("Trinity's Data Portfolio")
 st.write(
     """
 Welcome to my interactive data portfolio.  
-Here you can explore projects I've built using Python, data analysis and visualisation tools.
-Click a project card below to open and interact with it.
+Here you can explore projects I’ve built across data analysis, dashboarding, Python, and visualisation tools.  
+Click a project card below to view each project.
 """
 )
 
@@ -26,8 +26,8 @@ with col1:
     st.write(
         """
 An interactive dashboard exploring World Happiness data, looking at how
-economy, health, social support and freedom relate to overall happiness scores
-across countries and regions.
+economy, health, social support, and freedom relate to overall happiness
+scores across countries and regions.
 """
     )
     st.page_link(
@@ -50,6 +50,28 @@ understand.
         label="Open project",
         icon="➡️",
     )
+
+st.divider()
+
+col3, col4 = st.columns(2)
+
+with col3:
+    st.markdown("### 📈 Public Service Performance Dashboard")
+    st.write(
+        """
+A Power BI dashboard built using publicly available OPG/HMCTS data to track
+demand, throughput, backlog, and timeliness across service areas and regions,
+with a focus on KPI reporting and stakeholder-friendly insight.
+"""
+    )
+    st.page_link(
+        "pages/3_Public_Service_Performance_Dashboard.py",
+        label="Open project",
+        icon="➡️",
+    )
+
+with col4:
+    st.empty()
 
 st.divider()
 
